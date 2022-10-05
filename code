@@ -41,20 +41,19 @@ def login(username:str, password:str)->bool:
         output = False
         return output
 # new options
-def my_wallet():
-    login_msg = "Well done! You are logged in! Let's start."
-    prompt_msg1 = "please enter an option [1-4]"
-    content1 = "options"
-    menu1 ='''1. Basic description of cryptocurrency
+login_msg = "Well done! You are logged in! Let's start."
+prompt_msg1 = "please enter an option [1-4]"
+content1 = "options"
+menu1 ='''1. Basic description of cryptocurrency
     2. Create a transaction
     3. Show 10 biggest transactions
     4. Show transactions of last month
     '''
-    print(cs_cyan, login_msg, end_code)
-    print(prompt_msg1)
-    print(content1.center)
-    print(menu1)
-    option1 = validate_int_input(prompt_msg1)
+print(cs_cyan, login_msg, end_code)
+print(prompt_msg1)
+print(content1.center)
+print(menu1)
+option1 = validate_int_input(prompt_msg1)
     
 while option1 < 1 or option1 > 4:
     option1 = validate_int_input(f"{cs_red}invalid option, {prompt_msg1}{end_code}")
