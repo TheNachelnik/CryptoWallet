@@ -8,22 +8,19 @@ cs_cyan = "\33[0;36m"
 end_code = "\033[00m"
 
 # first thing that would appear, choosing between those two
-def register_or_login()->int:
-    welcome_msg = "Welcome to your digital ledger".center(50, '*')
-    prompt_msg = "Now please enter an option [1-2]"
-
-    content = "options"
-    menu ='''1. Register
+welcome_msg = "Welcome to your digital ledger".center(50, '*')
+prompt_msg = "Now please enter an option [1-2]"
+content = "options"
+menu ='''1. Register
     2. Login
     '''
-    print(cs_cyan, welcome_msg, end_code)
-    print(content.center(50))
-    print(menu)
-    option = validate_int_input(prompt_msg)
+print(cs_cyan, welcome_msg, end_code)
+print(content.center(50))
+print(menu)
+option = validate_int_input(prompt_msg)
 
-    while option < 1 or option > 2:
-        option = validate_int_input(f"{cs_red}invalid option, {prompt_msg}{end_code}")
-    return option
+while option < 1 or option > 2:
+    option = validate_int_input(f"{cs_red}invalid option, {prompt_msg}{end_code}")
 
 # option 1 register
 def register (username:str,password:str):
